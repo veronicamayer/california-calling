@@ -50,6 +50,11 @@ a {
   padding: 1.5vh 3%;
 }
 
+a:hover {
+  background-color: white;
+  color: black;
+}
+
 html {
   height: 100%;
   background-color: black;
@@ -226,7 +231,7 @@ header #iconLink {
   display: flex;
 }
 #poppyBearSection .textSectionArticles {
-  margin: 10vh 0 20vh 0;
+  margin: 10vh 0 40vh 0;
 }
 #poppyBearSection img {
   width: 20%;
