@@ -64,7 +64,6 @@ header {
     position: relative;
     margin-bottom: 10vh;
 
-
     #title {
         flex-direction: column;
         text-align: center;
@@ -235,7 +234,6 @@ position: relative;
     }
 }
 
-
 #poppyBearSection {
     background-color: white;
     position: relative;
@@ -344,11 +342,9 @@ footer {
 #dateSpinner {
     position: absolute;
     z-index: -1;
-    top: 40vh;
-    left: 50%;
+    top: 25vh;
+    left: 30%;
     transform: rotate(42deg);
-    clip-path: polygon(100% 0, 107% 100%, 0 100%, 8.7% 0);
-
     position: relative;
     display: flex;
     overflow: hidden;
