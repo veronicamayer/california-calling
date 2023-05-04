@@ -13,6 +13,16 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: black;
+}
+
+body {
+  margin: 0 auto;
+  overflow-x: hidden;
+  color: white;
+}
+
 h1 {
   font-family: "Lora";
   font-size: 8vw;
@@ -56,18 +66,6 @@ a {
 a:hover {
   background-color: white;
   color: black;
-}
-
-html {
-  height: 100%;
-  background-color: black;
-}
-
-body {
-  max-width: 1440px;
-  margin: 0 auto;
-  overflow-x: hidden;
-  color: white;
 }
 
 /* Complete first page (100vh) */
@@ -354,7 +352,8 @@ footer {
 }
 
 @media screen and (max-width: 1440px) {
-  footer, #poppyBearSection {
+  footer,
+  #poppyBearSection {
     overflow: hidden;
   }
 }

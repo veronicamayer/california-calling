@@ -8,6 +8,16 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: black;
+}
+
+body {
+    margin: 0 auto;
+    overflow-x: hidden;
+    color: white;
+}
+
 h1 {
     @include mixins.fontStyles(variables.$fontFamilyHeadlines, 8vw, 7vw);
     padding: 2vh 10%;
@@ -41,18 +51,6 @@ a {
 a:hover {
     background-color: white;
     color: black;
-}
-
-html {
-    height: 100%;
-    background-color: black;
-}
-
-body {
-    max-width: 1440px;
-    margin: 0 auto;
-    overflow-x: hidden;
-    color: white;
 }
 
 /* Complete first page (100vh) */
