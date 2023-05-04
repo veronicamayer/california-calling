@@ -1,7 +1,7 @@
 @use "mixins.scss";
 @use "variables.scss";
 
-/* General styles */
+/* // -------------------------- GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +19,7 @@ body {
 }
 
 h1 {
+    /* @mixin fontStyles ($fontFamily, $fontSize, $lineHeight) */
     @include mixins.fontStyles(variables.$fontFamilyHeadlines, 8vw, 7vw);
     padding: 2vh 10%;
 }
@@ -53,7 +54,7 @@ a:hover {
     color: black;
 }
 
-/* Complete first page (100vh) */
+/* // -------------------------- TITLE PAGE */
 header {
     height: 100vh;
     display: flex;
@@ -69,6 +70,7 @@ header {
         width: 60%;
 
         img {
+            /* line at the top */
             width: 1px;
             height: 20vh;
             position: absolute;
@@ -77,6 +79,7 @@ header {
         }
 
         span {
+            /* border for the word "calling" */
             text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
             color: black;
         }
@@ -92,6 +95,7 @@ header {
     }
 }
 
+/* // -------------------------- SECOND PAGE: STATISTICS */
 #statistics {
     @include mixins.backgroundImage("../img/map.svg", no-repeat, 40%, 95% 70%);
     position: relative;
@@ -109,6 +113,7 @@ header {
     }
 }
 
+/* // -------------------------- THIRD PAGE: IMAGES */
 #textInbetweenImages {
     background-color: white;
     position: relative;
@@ -180,17 +185,7 @@ header {
     }
 }
 
-#textInbetweenImages::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100vw;
-    width: 200vw;
-    height: 100%;
-    background-color: white;
-    z-index: -1;
-}
-
+/* // -------------------------- FORTH PAGE: THE GOLDEN BEAR */
 #goldenBearSection {
     display: flex;
     position: relative;
@@ -214,28 +209,13 @@ header {
     }
 }
 
-.textSectionArticles {
-    padding: 40vh 10% 60% 10%;
-    width: 40%;
-
-    h2 {
-        padding: 0;
-    }
-}
-
-.textSectionArticles:last-of-type {
-    width: 50%;
-
-    h4 {
-        padding-bottom: 3vh;
-    }
-}
-
+/* // -------------------------- FIFTH PAGE: THE POPPY BEAR */
 #poppyBearSection {
     background-color: white;
     position: relative;
     color: black;
     display: flex;
+    overflow: hidden;
 
     img {
         width: 20%;
@@ -275,67 +255,77 @@ header {
     }
 }
 
-#poppyBearSection::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100vw;
-    width: 200vw;
-    height: 100%;
-    background-color: white;
-    z-index: -1;
+/* // -------------------------- THE GOLDEN BEAR & THE POPPY BEAR TITLE ARTICLES */
+.textSectionArticles {
+    padding: 40vh 10% 60% 10%;
+    width: 40%;
+
+    h2 {
+        padding: 0;
+    }
 }
 
-#footerSection {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding: 0 10vw 10vh 10vw;
-
-    article {
-        width: 35%;
-    }
-
-    p {
-        margin-bottom: 2vh;
-    }
+.textSectionArticles:last-of-type {
+    width: 50%;
 
     h4 {
-        margin-bottom: 5vh;
+        padding-bottom: 3vh;
     }
+}
 
-    #socials a {
-        border: none;
-        width: 20px;
-        height: 20px;
-        padding: 0 1% 0 0;
-    }
+/* // -------------------------- FOOTER */
+footer {
+    position: relative;
+    overflow: hidden;
 
-    #socials img {
-        width: 20px;
-        height: 20px;
-        object-fit: contain;
-        margin-top: 10vh;
-    }
-
-    #logos {
-        justify-self: flex-end;
-        width: auto;
+    #footerSection {
         display: flex;
-        align-items: center;
-        gap: 20px;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 0 10vw 10vh 10vw;
 
-        img {
-            width: 100px;
+        article {
+            width: 35%;
+        }
+
+        p {
+            margin-bottom: 2vh;
+        }
+
+        h4 {
+            margin-bottom: 5vh;
+        }
+
+        #socials a {
+            border: none;
+            width: 20px;
+            height: 20px;
+            padding: 0 1% 0 0;
+        }
+
+        #socials img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            margin-top: 10vh;
+        }
+
+        #logos {
+            justify-self: flex-end;
+            width: auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            img {
+                width: 100px;
+            }
         }
     }
 }
 
-footer {
-    position: relative;
-}
-
 #dateSpinner {
+    /* Footer Animation */
     position: absolute;
     z-index: -1;
     top: 0;
@@ -375,5 +365,3 @@ footer {
         }
     }
 }
-
-@import "mediaqueries.scss";

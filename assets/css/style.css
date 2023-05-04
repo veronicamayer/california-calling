@@ -6,7 +6,7 @@
   font-family: Work Sans;
   src: url(../fonts/WorkSans-VariableFont_wght.ttf);
 }
-/* General styles */
+/* // -------------------------- GENERAL */
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +24,7 @@ body {
 }
 
 h1 {
+  /* @mixin fontStyles ($fontFamily, $fontSize, $lineHeight) */
   font-family: "Lora";
   font-size: 8vw;
   line-height: 7vw;
@@ -68,7 +69,7 @@ a:hover {
   color: black;
 }
 
-/* Complete first page (100vh) */
+/* // -------------------------- TITLE PAGE */
 header {
   height: 100vh;
   display: flex;
@@ -84,6 +85,7 @@ header #title {
   width: 60%;
 }
 header #title img {
+  /* line at the top */
   width: 1px;
   height: 20vh;
   position: absolute;
@@ -91,6 +93,7 @@ header #title img {
   left: 50%;
 }
 header #title span {
+  /* border for the word "calling" */
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   color: black;
 }
@@ -103,6 +106,7 @@ header #iconLink {
   top: 80vh;
 }
 
+/* // -------------------------- SECOND PAGE: STATISTICS */
 #statistics {
   background-image: url("../img/map.svg");
   background-repeat: no-repeat;
@@ -120,6 +124,7 @@ header #iconLink {
   padding-bottom: 15vh;
 }
 
+/* // -------------------------- THIRD PAGE: IMAGES */
 #textInbetweenImages {
   background-color: white;
   position: relative;
@@ -178,17 +183,7 @@ header #iconLink {
   width: 25%;
 }
 
-#textInbetweenImages::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100vw;
-  width: 200vw;
-  height: 100%;
-  background-color: white;
-  z-index: -1;
-}
-
+/* // -------------------------- FORTH PAGE: THE GOLDEN BEAR */
 #goldenBearSection {
   display: flex;
   position: relative;
@@ -209,26 +204,13 @@ header #iconLink {
   z-index: 1;
 }
 
-.textSectionArticles {
-  padding: 40vh 10% 60% 10%;
-  width: 40%;
-}
-.textSectionArticles h2 {
-  padding: 0;
-}
-
-.textSectionArticles:last-of-type {
-  width: 50%;
-}
-.textSectionArticles:last-of-type h4 {
-  padding-bottom: 3vh;
-}
-
+/* // -------------------------- FIFTH PAGE: THE POPPY BEAR */
 #poppyBearSection {
   background-color: white;
   position: relative;
   color: black;
   display: flex;
+  overflow: hidden;
 }
 #poppyBearSection img {
   width: 20%;
@@ -262,60 +244,67 @@ header #iconLink {
   z-index: 1;
 }
 
-#poppyBearSection::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100vw;
-  width: 200vw;
-  height: 100%;
-  background-color: white;
-  z-index: -1;
+/* // -------------------------- THE GOLDEN BEAR & THE POPPY BEAR TITLE ARTICLES */
+.textSectionArticles {
+  padding: 40vh 10% 60% 10%;
+  width: 40%;
+}
+.textSectionArticles h2 {
+  padding: 0;
 }
 
-#footerSection {
+.textSectionArticles:last-of-type {
+  width: 50%;
+}
+.textSectionArticles:last-of-type h4 {
+  padding-bottom: 3vh;
+}
+
+/* // -------------------------- FOOTER */
+footer {
+  position: relative;
+  overflow: hidden;
+}
+footer #footerSection {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   padding: 0 10vw 10vh 10vw;
 }
-#footerSection article {
+footer #footerSection article {
   width: 35%;
 }
-#footerSection p {
+footer #footerSection p {
   margin-bottom: 2vh;
 }
-#footerSection h4 {
+footer #footerSection h4 {
   margin-bottom: 5vh;
 }
-#footerSection #socials a {
+footer #footerSection #socials a {
   border: none;
   width: 20px;
   height: 20px;
   padding: 0 1% 0 0;
 }
-#footerSection #socials img {
+footer #footerSection #socials img {
   width: 20px;
   height: 20px;
   object-fit: contain;
   margin-top: 10vh;
 }
-#footerSection #logos {
+footer #footerSection #logos {
   justify-self: flex-end;
   width: auto;
   display: flex;
   align-items: center;
   gap: 20px;
 }
-#footerSection #logos img {
+footer #footerSection #logos img {
   width: 100px;
 }
 
-footer {
-  position: relative;
-}
-
 #dateSpinner {
+  /* Footer Animation */
   position: absolute;
   z-index: -1;
   top: 0;
@@ -349,13 +338,6 @@ footer {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   color: white;
   padding: 0 2vw;
-}
-
-@media screen and (max-width: 1440px) {
-  footer,
-  #poppyBearSection {
-    overflow: hidden;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
